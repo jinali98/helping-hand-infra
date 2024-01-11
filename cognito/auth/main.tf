@@ -30,6 +30,16 @@ resource "aws_cognito_user_pool" "user_pool" {
       max_length = 255            
     }
   }
+  schema{
+    name = "userType"
+    required = false
+    attribute_data_type = "String"
+    mutable = false
+    string_attribute_constraints { 
+      min_length = 1              
+      max_length = 255            
+    }
+  }
   
   auto_verified_attributes = ["email"]
   username_attributes = ["email"]
